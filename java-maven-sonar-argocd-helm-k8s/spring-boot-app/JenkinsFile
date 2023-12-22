@@ -40,6 +40,7 @@ pipeline {
         script {
             def currentAgent = env.NODE_NAME ?: 'any available agent'
             echo "Executing on agent: ${currentAgent}"
+            echo "Build triggered by: ${env.BUILD_USER}"
             sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
             sh 'pwd'
             def dockerImage = docker.image("${DOCKER_IMAGE}")
