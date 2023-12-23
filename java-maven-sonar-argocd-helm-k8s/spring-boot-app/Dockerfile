@@ -1,6 +1,6 @@
 # You can change this base image to anything else
 # But make sure to use the correct version of Java
-FROM adoptopenjdk/openjdk11:jdk-11.0.12_7-alpine
+FROM adoptopenjdk/openjdk11:armv7l-tumbleweed-jdk-11.0.21_9-slim
 
 # Simply the artifact path
 ARG artifact=target/spring-boot-web.jar
