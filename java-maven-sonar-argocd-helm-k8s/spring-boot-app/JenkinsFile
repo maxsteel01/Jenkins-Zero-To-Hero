@@ -50,14 +50,7 @@ pipeline {
         }
         steps {
             script {
-                    // Set the Kubernetes context to Minikube
-                    sh "kubectl config use-context ${KUBE_CONTEXT}"
-
-                    // Apply the Kubernetes manifest to deploy the app
-                    sh "kubectl apply -f ${KUBE_MANIFEST}"
-
-                    // You may also need to wait for the deployment to finish
-                    // e.g., using kubectl rollout status or other mechanisms
+                sh 'kubectl apply -f java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yaml'
                 }
         }
     }
