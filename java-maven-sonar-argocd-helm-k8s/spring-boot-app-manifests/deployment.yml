@@ -18,4 +18,4 @@ spec:
       - name: spring-boot-app
         image: ismail001/myimage-cicd:replaceImageTag
         ports:
-        - containerPort: 8080
+        - containerPort: 8082
