@@ -50,7 +50,7 @@ pipeline {
                     echo "Jenkins User: ${USER}"
                     echo "Current Directory: ${PWD}"
                     sh 'kubectl config get-contexts'
-                    // sh "kubectl apply -f java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml --validate=false"
+                    sh "kubectl apply -f /var/lib/jenkins/workspace/Pipeline-demo/java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml --validate=false"
                 }
         }
     }
