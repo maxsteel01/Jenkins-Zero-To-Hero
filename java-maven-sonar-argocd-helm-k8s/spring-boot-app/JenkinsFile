@@ -44,10 +44,6 @@ pipeline {
       }
     }
     stage('Update Deployment File') {
-        environment {
-            KUBE_CONTEXT = 'minikube'
-            KUBE_MANIFEST = 'java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yaml'
-        }
         steps {
             script {
                 sh 'kubectl apply -f java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yaml'
