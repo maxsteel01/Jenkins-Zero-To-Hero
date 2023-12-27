@@ -46,6 +46,8 @@ pipeline {
     stage('Update Deployment File') {
         steps {
             script {
+                sh "kubectl config get-contexts"
+                sh "kubectl config use-context minikube"
                 sh "kubectl apply -f java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml --validate=false"
                 }
         }
